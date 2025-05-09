@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SEM Chatbot Deneme</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Dialogflow Messenger Styles -->
+  <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+
+  <!-- Dialogflow Messenger Script -->
+  <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: Google Sans, sans-serif;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      background-color: #FFE0B2;
+      overflow: hidden;
+    }
+    .header-container {
+      text-align: left;
+      padding: 150px 0 0 40px;
+      width: 100%;
+      height: 75vh;
+      display: flex;
+      align-items: flex-start;
+    }
+    .main-title {
+      font-size: 4.5em;
+      color: #444;
+      margin: 0;
+      text-align: left;
+      width: 75%;
+    }
+    .content-area {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    df-messenger {
+      z-index: 999;
+      position: fixed;
+      --df-messenger-font-color: #000;
+      --df-messenger-font-family: Google Sans;
+      --df-messenger-chat-background: #f3f6fc;
+      --df-messenger-message-user-background: #d3e3fd;
+      --df-messenger-message-bot-background: #fff;
+      bottom: 0;
+      right: 0;
+      top: 0;
+      width: 700px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header-container">
+    <h1 class="main-title">SEM Chatbot Deneme</h1>
+  </div>
+
+  <div class="content-area"></div>
+
+  <!-- Dialogflow Messenger -->
+  <df-messenger
+    project-id="sem-dev-app-smartfeed"
+    agent-id="481ffd68-edd1-4b07-ae39-0930fe4395db"
+    language-code="en">
+    <df-messenger-chat chat-title="SEM Chatbot"></df-messenger-chat>
+  </df-messenger>
+
+<!-- Bootstrap Modal (Güncellenmiş Form) -->
+<div class="modal fade" id="emailModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">İletişim Formu / Contact Form</h5>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="fullName" class="form-label">İsim Soyisim / Full Name</label>
+            <input type="text" class="form-control" id="fullName" placeholder="Adınızı girin / Enter your name">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">E-posta / Email</label>
+            <input type="email" class="form-control" id="email" placeholder="email@example.com">
+          </div>
+          <div class="mb-3">
+            <label for="company" class="form-label">Çalıştığınız Firma / Company</label>
+            <input type="text" class="form-control" id="company" placeholder="Firma adı / Company name">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Gönder / Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Bootstrap JS + Event Script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    window.addEventListener('df-user-input-entered', (event) => {
+      const userInput = event.detail.input.trim().toLowerCase();
+      if (userInput === "hi") {
+        const modal = new bootstrap.Modal(document.getElementById('emailModal'));
+        modal.show();
+      }
+    });
+    
+  </script>
+</body>
+</html>
