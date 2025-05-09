@@ -57,18 +57,20 @@
       bottom: 0;
       right: 0;
       top: 0;
-      width: 700px;
+      width: 500px;
     }
 
     /* Modal içindeki iframe için stil */
     #emailModal .modal-body iframe {
         width: 100%; /* Modal genişliğine uysun */
-        min-height: 600px; /* Google Form iframe yüksekliğine yakın veya biraz daha fazla */
+        min-height: 300px; /* Google Form iframe yüksekliğine yakın veya biraz daha fazla */
         border: none; /* iframe kenarlığını kaldır */
+        transform: scale(0.9);
+        transform-origin: top left;
     }
     /* Modal boyutunu biraz daha geniş yapmak için (opsiyonel) */
     #emailModal .modal-dialog {
-        max-width: 700px; /* Google Form iframe genişliğine yakın */
+        max-width: 600px; /* Google Form iframe genişliğine yakın */
     }
   </style>
 </head>
