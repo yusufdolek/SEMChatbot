@@ -23,7 +23,7 @@
       display: flex;
       flex-direction: column;
       background-color: #FFE0B2;
-      overflow: hidden;
+      overflow: hidden; /* Ana sayfanın kaymasını engelle */
     }
     .header-container {
       text-align: left;
@@ -59,6 +59,17 @@
       top: 0;
       width: 700px;
     }
+
+    /* Modal içindeki iframe için stil */
+    #emailModal .modal-body iframe {
+        width: 100%; /* Modal genişliğine uysun */
+        min-height: 600px; /* Google Form iframe yüksekliğine yakın veya biraz daha fazla */
+        border: none; /* iframe kenarlığını kaldır */
+    }
+    /* Modal boyutunu biraz daha geniş yapmak için (opsiyonel) */
+    #emailModal .modal-dialog {
+        max-width: 700px; /* Google Form iframe genişliğine yakın */
+    }
   </style>
 </head>
 <body>
@@ -76,32 +87,23 @@
     <df-messenger-chat chat-title="SEM Chatbot"></df-messenger-chat>
   </df-messenger>
 
-<!-- Bootstrap Modal (Güncellenmiş Form) -->
-<div class="modal fade" id="emailModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog">
+<!-- Bootstrap Modal (Google Form ile Güncellenmiş) -->
+<div class="modal fade" id="emailModal" tabindex="-1" aria-labelledby="emailModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg"> <!-- modal-lg sınıfı daha geniş bir modal sağlar -->
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">İletişim Formu / Contact Form</h5>
+        <h5 class="modal-title" id="emailModalLabel">İletişim Formu / Contact Form</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form>
-          <div class="mb-3">
-            <label for="fullName" class="form-label">İsim Soyisim / Full Name</label>
-            <input type="text" class="form-control" id="fullName" placeholder="Adınızı girin / Enter your name">
-          </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">E-posta / Email</label>
-            <input type="email" class="form-control" id="email" placeholder="email@example.com">
-          </div>
-          <div class="mb-3">
-            <label for="company" class="form-label">Çalıştığınız Firma / Company</label>
-            <input type="text" class="form-control" id="company" placeholder="Firma adı / Company name">
-          </div>
-        </form>
+        <!-- GOOGLE FORM IFRAME KODU BURAYA EKLENDİ -->
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSesp5oz2ZJr5HAfYjyu0pwvupgQE4c_yUJ8aM6k5A-oXI07cw/viewform?embedded=true" width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0">Yükleniyor…</iframe>
       </div>
+      <!--
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Gönder / Submit</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat / Close</button>
       </div>
+      -->
     </div>
   </div>
 </div>
@@ -112,11 +114,20 @@
     window.addEventListener('df-user-input-entered', (event) => {
       const userInput = event.detail.input.trim().toLowerCase();
       if (userInput === "hi") {
-        const modal = new bootstrap.Modal(document.getElementById('emailModal'));
-        modal.show();
+        const emailModal = new bootstrap.Modal(document.getElementById('emailModal'));
+
+        // Opsiyonel: Modal her açıldığında formun temizlenmesi için iframe'i yeniden yükle
+        // const iframe = document.querySelector('#emailModal iframe');
+        // if (iframe) {
+        //   const iframeSrc = iframe.getAttribute('src'); // iframe'in orijinal src'sini al
+        //   iframe.setAttribute('src', ''); // src'yi geçici olarak boşalt
+        //   setTimeout(() => { // Kısa bir gecikme ile src'yi geri yükle (tarayıcının yeniden yüklemesi için)
+        //       iframe.setAttribute('src', iframeSrc);
+        //   }, 0);
+        // }
+        emailModal.show();
       }
     });
-    
   </script>
 </body>
 </html>
