@@ -1,5 +1,7 @@
 # SEM Chatbot Deneme Projesi
 
+**🚀 Canlı Demo / Live Demo:** [https://yusufdolek.github.io/SEMChatbot/](https://yusufdolek.github.io/SEMChatbot/)
+
 SEM Chatbot projesi, SEM’in hizmetlerini tanıtmak amacıyla geliştirilen yapay zekâ destekli bir sohbet asistanıdır. İlk aşamada şirketimizi ve sunduğumuz dijital pazarlama çözümlerini tanıtan bu chatbot, ilerleyen süreçlerde tamamlanan projelerimiz hakkında da detaylı bilgi verebilecek şekilde geliştirilecektir.
 
 ## Yapılacaklar (To-Do List)
