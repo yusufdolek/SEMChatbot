@@ -30,5 +30,7 @@ SEM Chatbot projesi, SEM’in hizmetlerini tanıtmak amacıyla geliştirilen yap
 7.  **Modal Açılmadan Önce Bilgilendirme:**
     *   Modal açılmadan hemen önce, Dialogflow üzerinden kullanıcıya neden form doldurması gerektiği hakkında kısa bir bilgilendirme yapılabilir (örneğin, "Size daha iyi yardımcı olabilmem için birkaç bilgiye ihtiyacım var. İletişim formunu açıyorum.").
 
-8.  **Form Gönderimi Sonrası Chatbot Onayı:**
+8.  **Yapıldı:Form Gönderimi Sonrası Chatbot Onayı:**
     *   Google Form gönderildikten sonra (bu iframe içinde olduğu için doğrudan yakalamak zor olabilir, ancak kullanıcıya bilgi verilebilir), chatbot'un kullanıcıya "Formunuzu aldık, teşekkürler!" gibi bir onay mesajı vermesi sağlanabilir. Bu, Dialogflow'da form açıldıktan sonraki akışa eklenebilir.
+    *   Şuan form kapandıktan sonra mesaj atıyor. Formun doldurulup doldurulmadığı kontrol edilmiyor. Daha kalıcı bir çözüm için webhook gibi sistem kullanılması gerekli. 
+    *   Not: Eğer google form yerine html formu kullanırsak işimiz daha kolay. Gönder buttonuna tıklandıktansa mesajı dönebiliriz.
