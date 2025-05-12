@@ -7,8 +7,8 @@ SEM Chatbot projesi, SEM’in hizmetlerini tanıtmak amacıyla geliştirilen yap
 ## Yapılacaklar (To-Do List)
 
 1.  **Intent Ayarlama:**
-    *   Formun açılmasını tetikleyen "hi" kelimesi yerine, Dialogflow'da özel bir Intent oluşturulacak.
-    *   HTML tarafındaki JavaScript, bu özel Intent'in Dialogflow tarafından tetiklenmesi durumunda (örneğin, Dialogflow'dan gönderilecek özel bir olay/payload ile) modalı açacak şekilde güncellenecek.
+    *   Formun açılmasını tetikleyen "hi" kelimesi yerine, Dialogflow'da özel bir Intent oluşturulacak. YAPILDI. Kullanıcının form istemesi ya da bana ulaşın demesi lazım. Promtların daha iyi ayarlanması gerekli
+    *   HTML tarafındaki JavaScript, bu özel Intent'in Dialogflow tarafından tetiklenmesi durumunda (örneğin, Dialogflow'dan gönderilecek özel bir olay/payload ile) modalı açacak şekilde güncellenecek. YAPILDI
 
 2.  **2.4 Eğitimi Tekrarı ve Özeti:**
     *   Belirtilen "2.4 eğitimi" tekrar edilecek.
@@ -23,12 +23,12 @@ SEM Chatbot projesi, SEM’in hizmetlerini tanıtmak amacıyla geliştirilen yap
 5.  **Dialogflow CX Dokümantasyonunu Gözden Geçirme:**
     *   Dialogflow CX'in resmi dokümantasyonu ([https://cloud.google.com/dialogflow/cx/docs](https://cloud.google.com/dialogflow/cx/docs)) tekrar okunarak bilgiler tazelenecek ve projedeki olası iyileştirme alanları için fikir edinilecek.
 
-6.  **Prompt'ları Kontrol Etme:**
-    *   Dialogflow agent'ında kullanılan tüm kullanıcıya yönelik metinler (prompt'lar, yanıtlar, sorular vb.) gözden geçirilecek.
-    *   Anlaşılırlık, doğallık ve kullanıcı deneyimi açısından iyileştirmeler yapılacak.
+6.  **ÖNEMLİ Prompt'ları Kontrol Etme:**
+    *   Dialogflow agent'ında kullanılan tüm kullanıcıya yönelik metinler (prompt'lar, yanıtlar, sorular vb.) gözden geçirilecek. 
+    *   Anlaşılırlık, doğallık ve kullanıcı deneyimi açısından iyileştirmeler yapılacak. 
 
 7.  **Modal Açılmadan Önce Bilgilendirme:**
-    *   Modal açılmadan hemen önce, Dialogflow üzerinden kullanıcıya neden form doldurması gerektiği hakkında kısa bir bilgilendirme yapılabilir (örneğin, "Size daha iyi yardımcı olabilmem için birkaç bilgiye ihtiyacım var. İletişim formunu açıyorum.").
+    *   Modal açılmadan hemen önce, Dialogflow üzerinden kullanıcıya neden form doldurması gerektiği hakkında kısa bir bilgilendirme yapılabilir (örneğin, "Size daha iyi yardımcı olabilmem için birkaç bilgiye ihtiyacım var. İletişim formunu açıyorum."). İ
 
 8.  **Yapıldı:Form Gönderimi Sonrası Chatbot Onayı:**
     *   Google Form gönderildikten sonra (bu iframe içinde olduğu için doğrudan yakalamak zor olabilir, ancak kullanıcıya bilgi verilebilir), chatbot'un kullanıcıya "Formunuzu aldık, teşekkürler!" gibi bir onay mesajı vermesi sağlanabilir. Bu, Dialogflow'da form açıldıktan sonraki akışa eklenebilir.
